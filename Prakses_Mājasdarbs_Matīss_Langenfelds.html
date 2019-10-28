@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="Prakses_Mājasdarbs_Matīss_Langenfelds.css">
+	<meta charset="UTF-8">
+	<title>Majasdarbs1</title>
+</head>
+<body>
+	<div class="Menu">  <!-- Seit tiek izvedots menu -->
+		<div class="SelectBox"> <!-- Seit sakas izveidotas valutas -->
+			<div class="HiddenBox" id="EUR">
+					<button onclick="CreateCurency('EUR'); ToggleStyle('Eur'); CntrlCheck('CheckEUR')" id="X">	<!-- Poga ar ko aizver jaunas valutas -->
+            			X
+       				</button>															
+				EUR
+			</div>
+			<div class="HiddenBox" id="PLN">
+					<button onclick="CreateCurency('PLN'); ToggleStyle('Pln'); CntrlCheck('CheckPLN')" id="X">
+            			x
+       				</button>
+				PLN
+			</div>
+			<div class="HiddenBox" id="GEL">
+					<button onclick="CreateCurency('GEL'); ToggleStyle('Gel'); CntrlCheck('CheckGEL')" id="X">
+            			x
+       				</button>
+				GEL
+			</div>
+			<div class="HiddenBox" id="DKK">
+					<button onclick="CreateCurency('DKK'); ToggleStyle('Dkk'); CntrlCheck('CheckDKK')" id="X">
+            			x
+       				</button>
+				DKK
+			</div>
+			<div class="HiddenBox" id="CZK">
+					<button onclick="CreateCurency('CZK'); ToggleStyle('Czk'); CntrlCheck('CheckCZK')" id="X">
+            			x
+       				</button>
+				CZK
+			</div>
+			<div class="HiddenBox" id="GBP">
+					<button onclick="CreateCurency('GBP'); ToggleStyle('Gbp'); CntrlCheck('CheckGBP')" id="X">
+            			x
+       				</button>
+				GBP
+			</div>
+			<div class="HiddenBox" id="SEK">
+					<button onclick="CreateCurency('SEK'); ToggleStyle('Sek'); CntrlCheck('CheckSEK')" id="X">
+            			x
+       				</button>
+				SEK
+			</div>
+			<div class="HiddenBox" id="USD">
+					<button onclick="CreateCurency('USD'); ToggleStyle('Usd'); CntrlCheck('CheckUSD')" id="X">
+            			x
+       				</button>
+				USD
+			</div>
+			<div class="HiddenBox" id="RUB">
+					<button onclick="CreateCurency('RUB'); ToggleStyle('Rub'); CntrlCheck('CheckRUB')" id="X">
+            			x
+       				</button>
+				RUB
+			</div>
+		</div>
+		<div class="ButtonBox"> <!-- Seit sakas valutas izvelne -->
+			<table>
+				<tr>
+    				<td><button id="Eur" class="off" onclick="CreateCurency('EUR'); ToggleStyle('Eur'); CntrlCheck('CheckEUR')"><input type="checkbox" id="CheckEUR" />EUR</button></td>
+    				<td><button id="Pln" class="off" onclick="CreateCurency('PLN'); ToggleStyle('Pln'); CntrlCheck('CheckPLN')"><input type="checkbox" id="CheckPLN" />PLN</button></td>
+    				<td><button id="Gel" class="off" onclick="CreateCurency('GEL'); ToggleStyle('Gel'); CntrlCheck('CheckGEL')"><input type="checkbox" id="CheckGEL" />GEL</button></td>
+  				</tr>
+  				<tr>
+    				<td><button id="Dkk" class="off" onclick="CreateCurency('DKK'); ToggleStyle('Dkk'); CntrlCheck('CheckDKK')"><input type="checkbox" id="CheckDKK" />DKK</button></td>
+    				<td><button id="Czk" class="off" onclick="CreateCurency('CZK'); ToggleStyle('Czk'); CntrlCheck('CheckCZK')"><input type="checkbox" id="CheckCZK" />CZK</button></td>
+    				<td><button id="Gbp" class="off" onclick="CreateCurency('GBP'); ToggleStyle('Gbp'); CntrlCheck('CheckGBP')"><input type="checkbox" id="CheckGBP" />GBP</button></td>
+  				</tr>
+  				<tr>
+    				<td><button id="Sek" class="off" onclick="CreateCurency('SEK'); ToggleStyle('Sek'); CntrlCheck('CheckSEK')"><input type="checkbox" id="CheckSEK" />SEK</button></td>
+    				<td><button id="Usd" class="off" onclick="CreateCurency('USD'); ToggleStyle('Usd'); CntrlCheck('CheckUSD')"><input type="checkbox" id="CheckUSD" />USD</button></td>
+    				<td><button id="Rub" class="off" onclick="CreateCurency('RUB'); ToggleStyle('Rub'); CntrlCheck('CheckRUB')"><input type="checkbox" id="CheckRUB" />RUB</button></td>
+  				</tr>
+			</table>
+		</div>
+	</div>
+<script>
+function ToggleStyle(el){	// Funkcijas ar maina pogas klasi, lai poga stradatu ka sledzis
+	var x = document.getElementById(el)
+    if(x.className == "off") {
+        x.className="on";
+    } else {
+        x.className="off";
+    }
+}
+function CreateCurency(Curr) {	// Funkcija ar kuru palidzibu panem mainigo no pogas un tad maina valutu redzamu vai neredzamu
+  var x = document.getElementById(Curr);
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+function CntrlCheck(check) {	// Funkcija kas maina checkboxa statusu uz izveletu vai neizveletu
+  var x = document.getElementById(check);
+  if (x.checked == false) {
+  	x.checked = true;
+  } else {
+  	x.checked = false;
+  }
+}
+</script>
+</body>
+</html>
